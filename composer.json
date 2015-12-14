@@ -1,0 +1,9 @@
+{
+    "require": {
+        "symfony/dom-crawler": "^3.0",
+        "symfony/css-selector": "^3.0",
+        "rmccue/requests": "^1.6",
+        "slim/slim": "3.0",
+        "catfan/Medoo": "^1.0"
+    }
+}
