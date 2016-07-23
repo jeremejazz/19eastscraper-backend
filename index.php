@@ -6,7 +6,7 @@ require_once('vendor/autoload.php');
 $f3 = \Base::instance();
 // F3 autoloader for application business code
 $f3->set('AUTOLOAD', 'app/');
-
+$f3->config('config/config.ini');
 require_once('config/routes.php');
  
 
