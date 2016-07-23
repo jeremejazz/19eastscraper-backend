@@ -7,10 +7,7 @@ $f3 = \Base::instance();
 // F3 autoloader for application business code
 $f3->set('AUTOLOAD', 'app/');
 
-//load all route files
-$files = glob('app/routes/*.php');
-foreach ($files as $file) {
-    require($file);   
-}
+require_once('config/routes.php');
+ 
 
-$f3->run();
+$f3->run(); 
