@@ -6,13 +6,13 @@ namespace controllers;
 use Symfony\Component\DomCrawler\Crawler;
 /*CLI events*/
  
-class process {
+class process extends controller{
 	
 	function fetchData(\Base $f3, $params) {
  
 		$web = \Web::instance();
 		$data = $web->request($f3->get('target'));
-
+		$schedules = new \models\Schedule($this->db);
 		$crawler = new Crawler($data['body']);
 		$processed_data = []; 
 			/*
