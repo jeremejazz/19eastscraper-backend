@@ -23,12 +23,22 @@ class Schedule {
                 //check if date exists
               
                 $rows = $this->db->exec("SELECT * from schedules where `event_date` = '{$event_date}'");
-                     // echo 'count: ' . count($rows);    
+   
               
                     if(count($rows) > 0){
 
-                        //TODO: update if event_gig different 
-                        
+                            foreach($rows as $row){
+
+                                if( $row['event_gig'] != $gig ){
+                                    $this->db->exec("UPDATE schedules set event_gig = :gig, date_updated = now() where id = :id",
+                                     array(   
+                                         ':gig'             => $gig, 
+                                         ':id'              => $row['id']  
+                                         )
+                                    );
+                                }
+
+                            }
                     }else{ 
                         //else if false, insert new items
  
