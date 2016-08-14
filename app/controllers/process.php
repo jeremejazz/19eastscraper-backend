@@ -4,6 +4,7 @@
 namespace controllers;
 
 use Symfony\Component\DomCrawler\Crawler;
+use \Models\Schedule;
 /*CLI events*/
  
 class process extends controller{
@@ -48,8 +49,9 @@ class process extends controller{
 		    					'raw' => $node->html()
 		    				);
 					});;
-
-		print_r($nodeValues);
+					
+			 $schedule = new Schedule($this->db);
+			 $schedule->saveSchedule($nodeValues);
 	}
 
  
