@@ -4,11 +4,11 @@ namespace controllers;
  
  
 
-class home {
+class home extends controller{
 	function index(\Base $f3, $params) {
-		echo "Welcome to app!";
-
-	 	
+ 
+		$f3->set('title','test');
+	 	$f3->set('view', 'home.htm');
 	}
  
 }

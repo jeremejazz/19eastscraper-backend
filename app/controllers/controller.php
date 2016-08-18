@@ -21,4 +21,12 @@ class controller {
 		$this->db = $db;
  
 	}
+
+	function afterRoute(){
+		
+		if($this->f3->get('view')){
+			echo \Template::instance()->render('layout/layout.htm');
+		}
+
+	}
 }
