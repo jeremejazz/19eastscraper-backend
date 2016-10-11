@@ -22,7 +22,7 @@ class Schedule {
  
                 //check if date exists
               
-                $rows = $this->db->exec("SELECT * from schedules where `event_date` = '{$event_date}'");
+                $rows = $this->db->exec("SELECT * from schedules where `event_date` = '{$event_date}' order by `event_date` ASC");
    
               
                     if(count($rows) > 0){
