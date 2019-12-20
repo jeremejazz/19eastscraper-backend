@@ -1,0 +1,5 @@
+vendor/
+composer.lock
+/assets/bower_components
+/tmp
+/config/config.ini
